@@ -1,0 +1,28 @@
+html,
+body,
+arcgis-map{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.geocode-input-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100% ;
+}
+
+#search-input {
+    width: 80%;
+}
+
+calcite-panel {
+    --calcite-panel-content-space: 10px;
+}
+
+calcite-shell-panel {
+    --calcite-shell-panel-width: 33vw
+}
