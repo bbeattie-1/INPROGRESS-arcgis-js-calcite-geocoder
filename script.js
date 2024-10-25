@@ -7,11 +7,20 @@ require(["esri/layers/GraphicsLayer", "esri/Graphic", "esri/geometry/Point"], (G
 
     resetButton.addEventListener("click", function () {
         searchInput.value = ""
+        searchButton.disabled = true
+    })
+
+    searchInput.addEventListener("calciteInputTextInput", function() {
+        if (searchInput.value.length > 2) {
+            searchButton.disabled = false
+        } else {
+            searchButton.disabled = true
+        }
     })
     
     
     searchButton.addEventListener("click", function () {
-        const apiKey = '3NKHt6i2urmWtqOuugvr9bCPjgMFGEIN-pLwILbpge1DQLFBZZ69QIz7KVbYuprHCczm6O9oVomKg_21SLdLgmHMqPSpZXZOE5M_rHjjx8EmuWTHDlIw9aMHmccDgrQu'
+        const apiKey = '3NKHt6i2urmWtqOuugvr9e47A_MlN1O7L2-Hi4TkVsAgdQFUFdjM0lLJc0Z6ft7oIqRRMiWG1MGwHnj4dYITWMZi5sHNnYU3WKLFBtRFYqwaD3GKF1-_FPwr9JdGnDGI'
         let searchText = searchInput.value
         let searchURL = `https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?address=${searchText}&outFields=*&f=json&token=${apiKey}`
         
