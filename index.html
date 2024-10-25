@@ -12,20 +12,24 @@
   <script type="module" src="https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js"></script>
 </head>
 <body>
-        <calcite-shell>
+        <calcite-shell content-behind>
             <calcite-navigation slot="header">
                 <calcite-navigation-logo slot="logo" icon="feature-layer" heading="Geocoding App" description="By Ben Beattie | 10/24/2024">
                 </calcite-navigation-logo>
             </calcite-navigation>
-            <calcite-shell-panel slot="panel-start">
-                <calcite-panel heading="Geocode Options:">
-                    <div class="geocode-input-container">
-                        <calcite-input-text id="search-input" placeholder="Enter your address" icon="pin-tear-f"></calcite-input-text>
+            <calcite-shell-panel slot="panel-start" display-mode="float">
+                <calcite-panel heading="Options:">
+                    <calcite-label>
+                        Geocoded Address
+                        <div class="geocode-input-container">
+                            <calcite-input-text id="search-input" value="Lancaster, PA" placeholder="Enter your address" icon="pin-tear-f"></calcite-input-text>
+                            <calcite-button id="reset-button" kind="brand" appearance="outline-fill" icon-start="reset" id="search-button"></calcite-button>
+                        </div>
                         <calcite-button id="search-button">Search</calcite-button>
-                    </div>
+                    </calcite-label>
                 </calcite-panel>
             </calcite-shell-panel>
-            <arcgis-map center="-96, 40" zoom="4" id="map"></arcgis-map>
+            <arcgis-map basemap="gray" center="-96, 40" zoom="4" id="map"></arcgis-map>
         </calcite-shell>
         <script src="./script.js"></script>
 </body>
