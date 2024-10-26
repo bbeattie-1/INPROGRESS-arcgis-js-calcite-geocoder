@@ -14,7 +14,7 @@
 <body>
         <calcite-shell content-behind>
             <calcite-navigation slot="header">
-                <calcite-navigation-logo slot="logo" icon="feature-layer" heading="Geocoding App" description="By Ben Beattie | 10/24/2024">
+                <calcite-navigation-logo slot="logo" icon="feature-layer" heading="Geocoding Test App" description="By Ben Beattie | 10/24/2024">
                 </calcite-navigation-logo>
             </calcite-navigation>
             <calcite-shell-panel slot="panel-start" display-mode="float">
@@ -27,6 +27,9 @@
                         </div>
                         <calcite-button id="search-button">Search</calcite-button>
                     </calcite-label>
+                    <calcite-label id="location-list-label" hidden>Locations:</calcite-label>
+                    <calcite-list id="locations-list"></calcite-list-item>
+                    </calcite-list>
                 </calcite-panel>
             </calcite-shell-panel>
             <arcgis-map basemap="gray" center="-96, 40" zoom="4" id="map"></arcgis-map>
